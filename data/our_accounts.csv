@@ -1,0 +1,11 @@
+domain,name,status
+acmefreight.example,Acme Freight,customer
+bluepeak.example,Bluepeak Health,open_opp
+cindercorp.example,Cinder Corp,prospect
+dovetail-bank.example,Dovetail Bank,open_opp
+everstone.example,Everstone Retail,customer
+foxglove.example,Foxglove Media,prospect
+granite-energy.example,Granite Energy,prospect
+harborline.example,Harborline Logistics,open_opp
+ironwood.example,Ironwood Insurance,customer
+junipergrid.example,Juniper Grid,prospect
