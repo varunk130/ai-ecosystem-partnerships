@@ -1,0 +1,13 @@
+partner,domain,status
+Northwind Data,https://www.acmefreight.example/,customer
+Northwind Data,bluepeak.example,customer
+Northwind Data,cindercorp.example,customer
+Northwind Data,junipergrid.example,prospect
+Halcyon Cloud,WWW.DOVETAIL-BANK.EXAMPLE,customer
+Halcyon Cloud,everstone.example,customer
+Halcyon Cloud,granite-energy.example,customer
+Halcyon Cloud,harborline.example,prospect
+Halcyon Cloud,unmapped-co.example,customer
+Brightline Consulting,ironwood.example,prospect
+Brightline Consulting,harborline.example,customer
+Brightline Consulting,foxglove.example,prospect
