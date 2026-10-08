@@ -53,7 +53,7 @@ Work co-sell first, ranked by opportunity amount and stage. Cap the list at what
 
 ### Step 4: Balance the exchange
 
-Count what you are asking for (co-sell, intro request) against what you are giving (referral to partner). A one-sided list will not get worked.
+The command prints a give/ask balance per partner under the table: asks are co-sell and intro request, gives are referral to partner. A one-sided list will not get worked.
 
 ## Output Format
 
