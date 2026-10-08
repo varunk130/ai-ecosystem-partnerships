@@ -65,7 +65,7 @@ Kestrel AI             isv       59.0   Growth                 traction     Targ
 | Which shared accounts should we work with a partner, and how? | `python -m partner_ecosystem overlap data/our_accounts.csv data/partner_accounts.csv` |
 | What did partners source and influence, and do attached deals win more? | `python -m partner_ecosystem attribution data/opportunities.csv` |
 
-Add `--json` to any command for machine-readable output.
+Every command takes `--format table|json|csv` and `--partner NAME`. `score` also takes `--weights FILE` for custom weights.
 
 ## Skills
 
