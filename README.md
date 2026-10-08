@@ -48,12 +48,12 @@ python -m partner_ecosystem score data/partners.csv
 ```
 
 ```text
-partner                type      score  tier       weakest      motion
----------------------  --------  -----  ---------  -----------  ----------------------------------------------------
-Northwind Data         isv       94.6   Strategic  icp_fit      Joint business plan, exec cadence, dedicated co-sell
-Halcyon Cloud          cloud     92.2   Strategic  icp_fit      Joint business plan, exec cadence, dedicated co-sell
-Brightline Consulting  si        75.8   Strategic  integration  Joint business plan, exec cadence, dedicated co-sell
-Kestrel AI             isv       59.0   Growth     traction     Targeted account mapping and co-marketing
+partner                type      score  tier       borderline  weakest      motion
+---------------------  --------  -----  ---------  ----------  -----------  ----------------------------------------------------
+Northwind Data         isv       94.6   Strategic              icp_fit      Joint business plan, exec cadence, dedicated co-sell
+Halcyon Cloud          cloud     92.2   Strategic              icp_fit      Joint business plan, exec cadence, dedicated co-sell
+Brightline Consulting  si        75.8   Strategic  yes         integration  Joint business plan, exec cadence, dedicated co-sell
+Kestrel AI             isv       59.0   Growth                 traction     Targeted account mapping and co-marketing
 ...
 ```
 
