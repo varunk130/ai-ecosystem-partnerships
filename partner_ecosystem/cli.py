@@ -36,6 +36,17 @@ def _emit(args: argparse.Namespace, records: list[dict], headers: Sequence[str])
         print(format_table(headers, [[record[header] for header in headers] for record in records]))
 
 
+def _filter_partner(args: argparse.Namespace, records: list[dict]) -> list[dict]:
+    """Keep only the requested partner's records, or all when no filter is set."""
+    if not args.partner:
+        return records
+    wanted = args.partner.strip().casefold()
+    matched = [record for record in records if record["partner"].casefold() == wanted]
+    if not matched:
+        raise ValueError(f"no partner named {args.partner!r} in the input")
+    return matched
+
+
 def cmd_score(args: argparse.Namespace) -> int:
     """Score and tier every partner, highest score first."""
     weights = load_weights(args.weights) if args.weights else None
@@ -55,6 +66,7 @@ def cmd_score(args: argparse.Namespace) -> int:
             }
         )
     records.sort(key=lambda record: record["score"], reverse=True)
+    records = _filter_partner(args, records)
     _emit(args, records, ["partner", "type", "score", "tier", "borderline", "weakest", "motion"])
     return 0
 
@@ -72,6 +84,7 @@ def cmd_overlap(args: argparse.Namespace) -> int:
         }
         for overlap in sorted(overlaps, key=lambda overlap: (overlap.partner, overlap.play, overlap.account))
     ]
+    records = _filter_partner(args, records)
     _emit(args, records, ["partner", "account", "ours", "theirs", "play"])
     return 0
 
@@ -93,6 +106,7 @@ def cmd_attribution(args: argparse.Namespace) -> int:
         }
         for entry in attribute(opportunities)
     ]
+    records = _filter_partner(args, records)
     lift = win_rate_lift(opportunities)
     if args.json:
         print(json.dumps({"partners": records, "win_rate": lift}, indent=2))
@@ -130,6 +144,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     for command in commands.choices.values():
         command.add_argument("--json", action="store_true", help="emit JSON instead of a table")
+        command.add_argument("--partner", help="only show this partner (case-insensitive)")
     return parser
 
 
