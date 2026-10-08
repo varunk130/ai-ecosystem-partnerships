@@ -48,6 +48,18 @@ A partner with `icp_overlap` 0.5, integration depth 1, 5 joint customers, 100,00
 
 This case is pinned in `tests/test_scoring.py`.
 
+## Estimating ICP overlap
+
+ICP fit carries the most weight, so write down how each `icp_overlap` value was reached. Three workable methods:
+
+| Method | How | Bias to expect |
+|--------|-----|----------------|
+| Shared-customer sample | Take 30 to 50 of the partner's customers and count how many match your ICP | Small samples swing widely; the partner may pick flattering accounts |
+| Public customer list | Match the logos and case studies on the partner's site against your ICP firmographics | Skews to large, referenceable brands and overstates enterprise fit |
+| Partner self-report | Ask the partner for their customer mix by segment | Optimistic, and their segment definitions rarely match yours |
+
+Use the same method for every partner in a review. A consistent bias still ranks partners correctly; mixed methods do not.
+
 ## Limits
 
 - The caps and weights are opinionated defaults, not benchmarks. Tune them to your deal sizes and pass custom weights to `score_partner`.
