@@ -109,6 +109,8 @@ def cmd_attribution(args: argparse.Namespace) -> int:
             "sourced_won": entry.sourced_won,
             "influenced_won": entry.influenced_won,
             "open_pipeline": entry.open_pipeline,
+            "won": entry.won,
+            "lost": entry.lost,
             "win_rate": entry.win_rate,
         }
         for entry in attribute(opportunities)
