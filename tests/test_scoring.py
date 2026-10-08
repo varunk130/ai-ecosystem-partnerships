@@ -1,8 +1,10 @@
+import json
+import tempfile
 import unittest
 from pathlib import Path
 
 from partner_ecosystem.models import Partner, load_partners
-from partner_ecosystem.scoring import WEIGHTS, score_dimensions, score_partner
+from partner_ecosystem.scoring import WEIGHTS, load_weights, score_dimensions, score_partner
 from partner_ecosystem.tiering import assign_tier, is_borderline
 
 DATA = Path(__file__).resolve().parent.parent / "data"
@@ -78,6 +80,28 @@ class ScoringTests(unittest.TestCase):
     def test_weights_must_sum_to_one(self):
         with self.assertRaises(ValueError):
             score_partner(make_partner(), {**WEIGHTS, "icp_fit": 0.9})
+
+
+class LoadWeightsTests(unittest.TestCase):
+    def write(self, payload):
+        handle = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False)
+        self.addCleanup(Path(handle.name).unlink)
+        with handle:
+            json.dump(payload, handle)
+        return handle.name
+
+    def test_example_file_loads_and_changes_the_score(self):
+        weights = load_weights(DATA / "weights.pipeline-heavy.json")
+        self.assertEqual(weights["pipeline"], 0.40)
+        self.assertLess(score_partner(make_partner(), weights).total, score_partner(make_partner()).total)
+
+    def test_rejects_missing_dimension(self):
+        with self.assertRaises(ValueError):
+            load_weights(self.write({"icp_fit": 1.0}))
+
+    def test_rejects_weights_that_do_not_sum_to_one(self):
+        with self.assertRaises(ValueError):
+            load_weights(self.write({**WEIGHTS, "icp_fit": 0.5}))
 
 
 class TieringTests(unittest.TestCase):
