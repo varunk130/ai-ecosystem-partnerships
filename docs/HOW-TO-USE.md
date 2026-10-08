@@ -31,7 +31,20 @@ partner-eco score data/partners.csv
 | `overlap <ours.csv> <theirs.csv>` | Two account lists | Which shared accounts to work, and how |
 | `attribution <opportunities.csv>` | Opportunity export | What partners sourced and influenced, and whether attached deals win more |
 
-Add `--json` to any command for machine-readable output.
+### Options
+
+| Option | Commands | Effect |
+|--------|----------|--------|
+| `--format table\|json\|csv` | all | Output format; `table` is the default |
+| `--json` | all | Shorthand for `--format json` |
+| `--partner NAME` | all | Show one partner only, matched case-insensitively |
+| `--weights FILE` | `score` | Score with custom weights from a JSON file |
+
+A weights file names all five dimensions and sums to 1. See `data/weights.pipeline-heavy.json` for an example.
+
+### Errors
+
+A missing file, a missing column, an invalid value, or an unknown partner name prints one line to stderr and exits with code 2.
 
 ## Input files
 
