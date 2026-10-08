@@ -13,6 +13,16 @@ three skills for Claude Code and GitHub Copilot.
 
 > All data in this repository is synthetic.
 
+## Contents
+
+- [How it fits together](#how-it-fits-together)
+- [Quickstart](#quickstart)
+- [What it answers](#what-it-answers)
+- [Skills](#skills)
+- [Documentation](#documentation)
+- [Related work](#related-work)
+- [License](#license)
+
 ## How it fits together
 
 ```mermaid
