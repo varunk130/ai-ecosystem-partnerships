@@ -18,7 +18,7 @@ Open an issue describing the partnership problem you are trying to solve and the
 - **Synthetic data only.** Never commit real partner names, customer lists, or pipeline numbers.
 - **No new dependencies** without a strong reason. The toolkit runs on the standard library.
 - **Test what you change.** Scoring and attribution changes need a test that pins the expected number.
-- **Explain weight changes.** If you move a weight, cap, or tier threshold, update `docs/scoring-methodology.md` in the same pull request.
+- **Explain weight changes.** If you move a weight, cap, or tier threshold, update the [scoring methodology](docs/scoring-methodology.md) in the same pull request.
 
 ## Local setup
 
