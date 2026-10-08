@@ -5,6 +5,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+- `--weights` option on `score` for custom scoring weights from a JSON file
+- `borderline` column on `score` for partners within three points of a tier threshold
+- `--partner` filter and `--format table|json|csv` on every command
+- Give/ask balance per partner under the `overlap` table
+- Closed-deal counts next to win rate in `attribution`
+- Guidance on estimating `icp_overlap`
+
+### Fixed
+- Bad input now prints a one-line error and exits 2 instead of a traceback
+
 ### Changed
 - Standardized on American spelling across code, docs, and skills
 - Added tables of contents to the README and usage guide
