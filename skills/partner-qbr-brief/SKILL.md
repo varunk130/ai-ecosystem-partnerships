@@ -28,12 +28,12 @@ Walk into a partner review with one page: where the relationship stands, what it
 ### Step 1: Pull the three views
 
 ```bash
-python -m partner_ecosystem score data/partners.csv --json
-python -m partner_ecosystem overlap data/our_accounts.csv data/partner_accounts.csv --json
-python -m partner_ecosystem attribution data/opportunities.csv --json
+python -m partner_ecosystem score data/partners.csv --json --partner "Northwind Data"
+python -m partner_ecosystem overlap data/our_accounts.csv data/partner_accounts.csv --json --partner "Northwind Data"
+python -m partner_ecosystem attribution data/opportunities.csv --json --partner "Northwind Data"
 ```
 
-Filter each output to the partner under review.
+`--partner` limits each view to the partner under review. The win-rate comparison in the attribution output still covers every deal.
 
 ### Step 2: State the position in one line
 
