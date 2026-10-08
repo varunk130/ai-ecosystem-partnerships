@@ -22,7 +22,7 @@ Rank a partner portfolio on evidence so investment follows fit, not the loudest 
 
 **Nice-to-have:**
 - Your ICP definition, to sanity-check `icp_overlap`
-- Any weights the team has already agreed
+- Any weights the team has already agreed, as a JSON file for `--weights`
 
 ## Process
 
@@ -53,7 +53,7 @@ Use the tier to set what the partner gets, and say so explicitly. A Growth partn
 ### Step 4: Challenge the result
 
 Before sharing, check for:
-- A partner within three points of a tier boundary: note it as borderline
+- A partner marked `yes` in the `borderline` column: it is within three points of a tier threshold
 - A high score carried by influenced pipeline alone
 - A new partner penalized for traction they have not had time to build
 
