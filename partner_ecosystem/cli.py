@@ -9,7 +9,7 @@ from typing import Sequence
 from .attribution import attribute, load_opportunities, win_rate_lift
 from .models import load_partners
 from .overlap import load_our_accounts, load_partner_accounts, map_overlap
-from .scoring import score_partner
+from .scoring import load_weights, score_partner
 from .tiering import assign_tier, is_borderline
 
 
@@ -38,9 +38,10 @@ def _emit(args: argparse.Namespace, records: list[dict], headers: Sequence[str])
 
 def cmd_score(args: argparse.Namespace) -> int:
     """Score and tier every partner, highest score first."""
+    weights = load_weights(args.weights) if args.weights else None
     records = []
     for partner in load_partners(args.partners):
-        score = score_partner(partner)
+        score = score_partner(partner, weights)
         tier = assign_tier(score.total)
         records.append(
             {
@@ -115,6 +116,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     score = commands.add_parser("score", help="score and tier every partner")
     score.add_argument("partners", help="path to partners CSV")
+    score.add_argument("--weights", help="path to a JSON file of dimension weights")
     score.set_defaults(func=cmd_score)
 
     overlap = commands.add_parser("overlap", help="map shared accounts and suggest a play for each")
