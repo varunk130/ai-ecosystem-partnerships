@@ -3,7 +3,7 @@ from pathlib import Path
 
 from partner_ecosystem.models import Partner, load_partners
 from partner_ecosystem.scoring import WEIGHTS, score_dimensions, score_partner
-from partner_ecosystem.tiering import assign_tier
+from partner_ecosystem.tiering import assign_tier, is_borderline
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -91,6 +91,15 @@ class TieringTests(unittest.TestCase):
     def test_rejects_out_of_range(self):
         with self.assertRaises(ValueError):
             assign_tier(101)
+
+    def test_borderline_on_either_side_of_a_threshold(self):
+        self.assertTrue(is_borderline(72))
+        self.assertTrue(is_borderline(78))
+        self.assertFalse(is_borderline(71.9))
+        self.assertFalse(is_borderline(65))
+
+    def test_zero_floor_is_not_a_boundary(self):
+        self.assertFalse(is_borderline(1))
 
 
 if __name__ == "__main__":
