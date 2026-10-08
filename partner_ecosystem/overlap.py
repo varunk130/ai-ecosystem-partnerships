@@ -46,7 +46,7 @@ def _read(path: str | Path) -> list[dict[str, str]]:
 
 
 def load_our_accounts(path: str | Path) -> dict[str, dict[str, str]]:
-    """Load our account list keyed by normalised domain."""
+    """Load our account list keyed by normalized domain."""
     accounts = {}
     for row in _read(path):
         status = row["status"].strip().lower()
@@ -57,7 +57,7 @@ def load_our_accounts(path: str | Path) -> dict[str, dict[str, str]]:
 
 
 def load_partner_accounts(path: str | Path) -> list[dict[str, str]]:
-    """Load partner account rows with normalised domains."""
+    """Load partner account rows with normalized domains."""
     rows = []
     for row in _read(path):
         status = row["status"].strip().lower()

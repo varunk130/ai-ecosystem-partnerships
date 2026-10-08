@@ -17,7 +17,7 @@ TIERS = (
     Tier("Strategic", 75, "Joint business plan, exec cadence, dedicated co-sell"),
     Tier("Growth", 55, "Targeted account mapping and co-marketing"),
     Tier("Emerging", 35, "Enablement and first joint wins"),
-    Tier("Watchlist", 0, "Self-serve programme, review quarterly"),
+    Tier("Watchlist", 0, "Self-serve program, review quarterly"),
 )
 
 

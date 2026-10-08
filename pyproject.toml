@@ -11,6 +11,12 @@ requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Varun Kulkarni" }]
 dependencies = []
+keywords = ["partnerships", "partner-ecosystem", "co-sell", "account-mapping", "attribution"]
+
+[project.urls]
+Homepage = "https://github.com/varunk130/ai-ecosystem-partnerships"
+Documentation = "https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/docs/HOW-TO-USE.md"
+Changelog = "https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/CHANGELOG.md"
 
 [project.scripts]
 partner-eco = "partner_ecosystem.cli:main"
