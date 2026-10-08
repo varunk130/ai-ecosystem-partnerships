@@ -31,6 +31,7 @@ def _emit(args: argparse.Namespace, records: list[dict], headers: Sequence[str])
 
 
 def cmd_score(args: argparse.Namespace) -> int:
+    """Score and tier every partner, highest score first."""
     records = []
     for partner in load_partners(args.partners):
         score = score_partner(partner)
@@ -51,6 +52,7 @@ def cmd_score(args: argparse.Namespace) -> int:
 
 
 def cmd_overlap(args: argparse.Namespace) -> int:
+    """List shared accounts with the play each one suggests."""
     overlaps = map_overlap(load_our_accounts(args.ours), load_partner_accounts(args.theirs))
     records = [
         {
@@ -71,6 +73,7 @@ def _percent(rate: float | None) -> str:
 
 
 def cmd_attribution(args: argparse.Namespace) -> int:
+    """Report sourced and influenced revenue per partner, plus win-rate lift."""
     opportunities = load_opportunities(args.opportunities)
     records = [
         {

@@ -1,5 +1,11 @@
 # How to Use
 
+- [Install](#install)
+- [Commands](#commands)
+- [Input files](#input-files)
+- [Using the skills](#using-the-skills)
+- [Running the tests](#running-the-tests)
+
 ## Install
 
 The toolkit has no third-party dependencies. Python 3.10 or newer is enough.
@@ -34,8 +40,8 @@ Add `--json` to any command for machine-readable output.
 | Column | Type | Meaning |
 |--------|------|---------|
 | `name` | text | Partner name |
-| `partner_type` | `isv`, `si`, `reseller`, `cloud`, `agency` | |
-| `region` | text | Free-form |
+| `partner_type` | `isv`, `si`, `reseller`, `cloud`, `agency` | Kind of partner |
+| `region` | text | Free-form label, such as `NA` or `EMEA` |
 | `icp_overlap` | 0-1 | Share of their customers inside your ICP |
 | `integration_depth` | 0-3 | 0 none, 1 listed, 2 certified, 3 embedded |
 | `joint_customers` | integer | Customers you share today |

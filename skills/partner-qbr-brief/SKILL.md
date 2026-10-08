@@ -8,11 +8,13 @@ description: 'Builds a one-page partner QBR brief from fit score, account overla
 Walk into a partner review with one page: where the relationship stands, what it produced, and what each side commits to next.
 
 ## When to Use
+
 - Preparing a quarterly business review with a partner
 - Briefing an exec sponsor before a partner meeting
 - Checking progress against a joint business plan
 
 ## What You'll Need
+
 **Critical inputs (ask if not provided):**
 - The partner's name
 - Partner, account, and opportunity CSVs covering the review period
@@ -34,17 +36,21 @@ python -m partner_ecosystem attribution data/opportunities.csv --json
 Filter each output to the partner under review.
 
 ### Step 2: State the position in one line
+
 Tier, score, and the weakest dimension. If the tier changed since last quarter, say why.
 
 ### Step 3: Report what the partnership produced
+
 Lead with sourced won revenue, then influenced, then open pipeline. Keep sourced and influenced separate; adding them overstates the result.
 
 If the partner has fewer than five closed deals, report the counts instead of a win rate.
 
 ### Step 4: Close the loop on last quarter
+
 List each prior commitment as done, slipped, or dropped, for both sides.
 
 ### Step 5: Make one ask and one give
+
 Tie the ask to the weakest dimension. Tie the give to something the partner has said they need.
 
 ## Output Format
@@ -76,6 +82,7 @@ Tie the ask to the weakest dimension. Tie the give to something the partner has 
 ```
 
 ## Guardrails
+
 - Keep it to one page. Detail goes in an appendix.
 - Do not quote the ecosystem-wide win-rate lift as this partner's result.
 - Partner-attached deals win more often partly because partners join stronger deals. Present lift as a correlation.

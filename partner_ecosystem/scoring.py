@@ -1,6 +1,6 @@
 """Weighted partner fit scoring.
 
-Each dimension is normalised to 0-1, then combined with WEIGHTS into a 0-100
+Each dimension is normalized to 0-1, then combined with WEIGHTS into a 0-100
 score. Caps keep one outsized number from carrying a partner on its own.
 """
 
@@ -42,7 +42,7 @@ def _capped(value: float, cap: float) -> float:
 
 
 def score_dimensions(partner: Partner) -> dict[str, float]:
-    """Return each scoring dimension for a partner, normalised to 0-1."""
+    """Return each scoring dimension for a partner, normalized to 0-1."""
     weighted_pipeline = partner.pipeline_sourced + INFLUENCED_DISCOUNT * partner.pipeline_influenced
     commitment = 0.6 * partner.exec_sponsor + 0.4 * _capped(partner.certified_people, CERTIFIED_CAP)
     return {
