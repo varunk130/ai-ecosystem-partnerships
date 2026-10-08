@@ -1,6 +1,6 @@
 ---
 name: partner-fit-scorecard
-description: 'Scores and tiers a partner portfolio on ICP fit, pipeline, integration depth, traction, and commitment, then recommends a motion per tier. Use when: partner scoring, partner tiering, partner prioritisation, portfolio review, which partners to invest in, partner programme design.'
+description: 'Scores and tiers a partner portfolio on ICP fit, pipeline, integration depth, traction, and commitment, then recommends a motion per tier. Use when: partner scoring, partner tiering, partner prioritization, portfolio review, which partners to invest in, partner program design.'
 ---
 
 # Partner Fit Scorecard
@@ -10,7 +10,7 @@ Rank a partner portfolio on evidence so investment follows fit, not the loudest 
 ## When to Use
 - Annual or quarterly partner portfolio review
 - Deciding which partners get a joint business plan
-- Designing or resetting programme tiers
+- Designing or resetting program tiers
 - Onboarding a new partner and setting expectations
 
 ## What You'll Need
@@ -49,7 +49,7 @@ Use the tier to set what the partner gets, and say so explicitly. A Growth partn
 Before sharing, check for:
 - A partner within three points of a tier boundary: note it as borderline
 - A high score carried by influenced pipeline alone
-- A new partner penalised for traction they have not had time to build
+- A new partner penalized for traction they have not had time to build
 
 ## Output Format
 
@@ -62,13 +62,13 @@ Before sharing, check for:
 ### Moves this quarter
 - Promote: [partner], because [dimension] moved from [x] to [y]
 - Invest: [partner], to fix [weakest dimension]
-- Deprioritise: [partner], because [reason]
+- Deprioritize: [partner], because [reason]
 
 ### Borderline calls
 - [partner]: [score], [what would tip it]
 ```
 
 ## Guardrails
-- Do not change weights to make a favoured partner rank higher. Change them only with a stated reason and re-score everyone.
+- Do not change weights to make a favored partner rank higher. Change them only with a stated reason and re-score everyone.
 - A score is a starting point for a decision, not the decision.
 - Never present synthetic sample data as real partner performance.
