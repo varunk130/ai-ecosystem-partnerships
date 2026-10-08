@@ -6,7 +6,9 @@ score. Caps keep one outsized number from carrying a partner on its own.
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
+from pathlib import Path
 
 from .models import Partner
 
@@ -64,3 +66,15 @@ def score_partner(partner: Partner, weights: dict[str, float] | None = None) -> 
         raise ValueError("weights must cover exactly the scoring dimensions")
     total = 100 * sum(weights[name] * value for name, value in dimensions.items())
     return PartnerScore(partner=partner.name, dimensions=dimensions, total=round(total, 1))
+
+
+def load_weights(path: str | Path) -> dict[str, float]:
+    """Load scoring weights from a JSON object of dimension name to weight."""
+    with open(path, encoding="utf-8") as handle:
+        raw = json.load(handle)
+    if not isinstance(raw, dict) or set(raw) != set(WEIGHTS):
+        raise ValueError(f"weights file must define exactly: {', '.join(sorted(WEIGHTS))}")
+    weights = {name: float(value) for name, value in raw.items()}
+    if abs(sum(weights.values()) - 1.0) > 1e-9:
+        raise ValueError("weights must sum to 1")
+    return weights
