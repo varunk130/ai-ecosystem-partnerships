@@ -33,6 +33,8 @@ Each dimension is normalized to 0-1, multiplied by its weight, and summed to a 0
 | Emerging | 35-54.9 | Enablement and first joint wins |
 | Watchlist | below 35 | Self-serve program, review quarterly |
 
+A score within three points of a threshold is marked borderline in `score` output. Treat the tier as provisional and say what would tip it.
+
 ## Worked example
 
 A partner with `icp_overlap` 0.5, integration depth 1, 5 joint customers, 100,000 sourced, 200,000 influenced, no exec sponsor, and 4 certified people:
@@ -62,6 +64,6 @@ Use the same method for every partner in a review. A consistent bias still ranks
 
 ## Limits
 
-- The caps and weights are opinionated defaults, not benchmarks. Tune them to your deal sizes and pass custom weights to `score_partner`.
+- The caps and weights are opinionated defaults, not benchmarks. Tune them to your deal sizes and pass custom weights with `--weights` or to `score_partner`.
 - `icp_overlap` is an estimate. Record how it was derived.
 - Win-rate lift in the attribution view is a correlation. Partners tend to engage on deals that are already healthier.
