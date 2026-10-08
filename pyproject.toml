@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "partner-ecosystem"
+version = "0.1.0"
+description = "Score, tier, map, and attribute a partner ecosystem."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Varun Kulkarni" }]
+dependencies = []
+keywords = ["partnerships", "partner-ecosystem", "co-sell", "account-mapping", "attribution"]
+
+[project.urls]
+Homepage = "https://github.com/varunk130/ai-ecosystem-partnerships"
+Documentation = "https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/docs/HOW-TO-USE.md"
+Changelog = "https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/CHANGELOG.md"
+
+[project.scripts]
+partner-eco = "partner_ecosystem.cli:main"
+
+[tool.setuptools]
+packages = ["partner_ecosystem"]

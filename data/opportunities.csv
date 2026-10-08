@@ -1,0 +1,17 @@
+opp_id,account,amount,stage,partner,role
+O-1001,Acme Freight,180000,won,Northwind Data,sourced
+O-1002,Bluepeak Health,240000,open,Northwind Data,influenced
+O-1003,Cinder Corp,95000,lost,Northwind Data,influenced
+O-1004,Dovetail Bank,410000,open,Halcyon Cloud,sourced
+O-1005,Everstone Retail,320000,won,Halcyon Cloud,influenced
+O-1006,Granite Energy,150000,won,Halcyon Cloud,sourced
+O-1007,Harborline Logistics,275000,open,Brightline Consulting,influenced
+O-1008,Ironwood Insurance,130000,won,Brightline Consulting,influenced
+O-1009,Juniper Grid,60000,lost,,none
+O-1010,Foxglove Media,85000,lost,,none
+O-1011,Keystone Foods,110000,won,,none
+O-1012,Larkspur Travel,70000,lost,,none
+O-1013,Marlow Devices,200000,won,Northwind Data,sourced
+O-1014,Nimbus Payroll,90000,lost,Halcyon Cloud,influenced
+O-1015,Orchard Labs,125000,open,,none
+O-1016,Pinecrest Hotels,145000,won,,none
