@@ -2,6 +2,7 @@ import unittest
 from pathlib import Path
 
 from partner_ecosystem.overlap import (
+    give_ask_balance,
     load_our_accounts,
     load_partner_accounts,
     map_overlap,
@@ -52,6 +53,16 @@ class MapOverlapTests(unittest.TestCase):
         self.assertEqual(summary["Northwind Data"]["co-sell"], 1)
         self.assertEqual(summary["Halcyon Cloud"]["joint expansion"], 1)
         self.assertEqual(summary["Brightline Consulting"]["co-sell"], 1)
+
+    def test_sample_data_give_ask_balance(self):
+        balance = give_ask_balance(
+            map_overlap(
+                load_our_accounts(DATA / "our_accounts.csv"),
+                load_partner_accounts(DATA / "partner_accounts.csv"),
+            )
+        )
+        self.assertEqual(balance["Brightline Consulting"], {"asks": 1, "gives": 1})
+        self.assertEqual(balance["Halcyon Cloud"], {"asks": 2, "gives": 0})
 
 
 if __name__ == "__main__":
