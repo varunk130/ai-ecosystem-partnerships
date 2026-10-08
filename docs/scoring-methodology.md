@@ -4,9 +4,9 @@ The fit score answers one question: given limited partner-team time, where does 
 
 ## Dimensions
 
-Each dimension is normalised to 0-1, multiplied by its weight, and summed to a 0-100 score.
+Each dimension is normalized to 0-1, multiplied by its weight, and summed to a 0-100 score.
 
-| Dimension | Weight | Normalisation | Why it matters |
+| Dimension | Weight | Normalization | Why it matters |
 |-----------|--------|---------------|----------------|
 | ICP fit | 30% | `icp_overlap` as given | Without shared buyers, nothing else converts |
 | Pipeline | 25% | `(sourced + 0.5 x influenced) / 2,000,000`, capped at 1 | The outcome the relationship exists for |
@@ -31,7 +31,7 @@ Each dimension is normalised to 0-1, multiplied by its weight, and summed to a 0
 | Strategic | 75+ | Joint business plan, exec cadence, dedicated co-sell |
 | Growth | 55-74.9 | Targeted account mapping and co-marketing |
 | Emerging | 35-54.9 | Enablement and first joint wins |
-| Watchlist | below 35 | Self-serve programme, review quarterly |
+| Watchlist | below 35 | Self-serve program, review quarterly |
 
 ## Worked example
 
