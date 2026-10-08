@@ -3,6 +3,13 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Changed
+- Standardized on American spelling across code, docs, and skills
+- Added tables of contents to the README and usage guide
+- Added docstrings to the CLI handlers and the opportunity loader
+
 ## [0.1.0] - 2026-10-05
 
 ### Added
