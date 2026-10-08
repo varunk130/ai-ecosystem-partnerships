@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from typing import Sequence
 
 from .attribution import attribute, load_opportunities, win_rate_lift
@@ -150,4 +151,12 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    return args.func(args)
+    try:
+        return args.func(args)
+    except FileNotFoundError as error:
+        print(f"partner-eco: file not found: {error.filename}", file=sys.stderr)
+    except KeyError as error:
+        print(f"partner-eco: input is missing the required column {error.args[0]!r}", file=sys.stderr)
+    except ValueError as error:
+        print(f"partner-eco: {error}", file=sys.stderr)
+    return 2
