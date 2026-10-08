@@ -49,6 +49,7 @@ def win_rate(won: int, lost: int) -> float | None:
 
 
 def load_opportunities(path: str | Path) -> list[Opportunity]:
+    """Load opportunities from a CSV file with a header row."""
     with open(path, newline="", encoding="utf-8") as handle:
         return [
             Opportunity(
