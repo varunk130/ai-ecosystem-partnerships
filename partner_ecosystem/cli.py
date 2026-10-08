@@ -100,6 +100,14 @@ def _percent(rate: float | None) -> str:
     return "n/a" if rate is None else f"{rate:.0%}"
 
 
+def _win_rate_cell(record: dict) -> str:
+    """Win rate with its sample size, such as 67% (2/3)."""
+    if record["win_rate"] is None:
+        return "n/a"
+    closed = record["won"] + record["lost"]
+    return f"{record['win_rate']:.0%} ({record['won']}/{closed})"
+
+
 def cmd_attribution(args: argparse.Namespace) -> int:
     """Report sourced and influenced revenue per partner, plus win-rate lift."""
     opportunities = load_opportunities(args.opportunities)
@@ -122,7 +130,7 @@ def cmd_attribution(args: argparse.Namespace) -> int:
         return 0
     headers = ["partner", "sourced_won", "influenced_won", "open_pipeline", "win_rate"]
     rows = [
-        [r["partner"], f"{r['sourced_won']:,.0f}", f"{r['influenced_won']:,.0f}", f"{r['open_pipeline']:,.0f}", _percent(r["win_rate"])]
+        [r["partner"], f"{r['sourced_won']:,.0f}", f"{r['influenced_won']:,.0f}", f"{r['open_pipeline']:,.0f}", _win_rate_cell(r)]
         for r in records
     ]
     print(format_table(headers, rows))
