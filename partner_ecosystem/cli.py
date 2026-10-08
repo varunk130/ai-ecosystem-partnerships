@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import sys
 from typing import Sequence
@@ -12,6 +13,8 @@ from .models import load_partners
 from .overlap import give_ask_balance, load_our_accounts, load_partner_accounts, map_overlap
 from .scoring import load_weights, score_partner
 from .tiering import assign_tier, is_borderline
+
+FORMATS = ("table", "json", "csv")
 
 
 def _cell(value: object) -> str:
@@ -31,8 +34,12 @@ def format_table(headers: Sequence[str], rows: Sequence[Sequence[object]]) -> st
 
 
 def _emit(args: argparse.Namespace, records: list[dict], headers: Sequence[str]) -> None:
-    if args.json:
+    if args.format == "json":
         print(json.dumps(records, indent=2))
+    elif args.format == "csv":
+        writer = csv.DictWriter(sys.stdout, fieldnames=headers, extrasaction="ignore", lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(records)
     else:
         print(format_table(headers, [[record[header] for header in headers] for record in records]))
 
@@ -87,7 +94,7 @@ def cmd_overlap(args: argparse.Namespace) -> int:
     ]
     records = _filter_partner(args, records)
     _emit(args, records, ["partner", "account", "ours", "theirs", "play"])
-    if not args.json:
+    if args.format == "table":
         shown = {record["partner"] for record in records}
         print("\nGive/ask balance")
         for partner, counts in sorted(give_ask_balance(overlaps).items()):
@@ -125,8 +132,11 @@ def cmd_attribution(args: argparse.Namespace) -> int:
     ]
     records = _filter_partner(args, records)
     lift = win_rate_lift(opportunities)
-    if args.json:
+    if args.format == "json":
         print(json.dumps({"partners": records, "win_rate": lift}, indent=2))
+        return 0
+    if args.format == "csv":
+        _emit(args, records, list(records[0]) if records else ["partner"])
         return 0
     headers = ["partner", "sourced_won", "influenced_won", "open_pipeline", "win_rate"]
     rows = [
@@ -160,7 +170,15 @@ def build_parser() -> argparse.ArgumentParser:
     attribution.set_defaults(func=cmd_attribution)
 
     for command in commands.choices.values():
-        command.add_argument("--json", action="store_true", help="emit JSON instead of a table")
+        command.add_argument("--format", choices=FORMATS, default="table", help="output format (default: table)")
+        command.add_argument(
+            "--json",
+            action="store_const",
+            const="json",
+            dest="format",
+            default=argparse.SUPPRESS,
+            help="shorthand for --format json",
+        )
         command.add_argument("--partner", help="only show this partner (case-insensitive)")
     return parser
 
