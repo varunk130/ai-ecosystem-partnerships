@@ -21,6 +21,11 @@ PLAYS = {
 }
 
 
+# Plays where we need something from the partner, and where we bring them something.
+ASK_PLAYS = ("co-sell", "intro request")
+GIVE_PLAYS = ("referral to partner",)
+
+
 @dataclass(frozen=True)
 class Overlap:
     partner: str
@@ -93,3 +98,14 @@ def summarize(overlaps: list[Overlap]) -> dict[str, Counter]:
     for overlap in overlaps:
         summary.setdefault(overlap.partner, Counter())[overlap.play] += 1
     return summary
+
+
+def give_ask_balance(overlaps: list[Overlap]) -> dict[str, dict[str, int]]:
+    """Count what we ask of each partner against what we give them."""
+    return {
+        partner: {
+            "asks": sum(plays[play] for play in ASK_PLAYS),
+            "gives": sum(plays[play] for play in GIVE_PLAYS),
+        }
+        for partner, plays in summarize(overlaps).items()
+    }
