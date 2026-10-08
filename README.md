@@ -39,6 +39,8 @@ flowchart LR
 
 ## Quickstart
 
+Requires Python 3.10 or newer. There is nothing to install.
+
 ```bash
 git clone https://github.com/varunk130/ai-ecosystem-partnerships.git
 cd ai-ecosystem-partnerships
