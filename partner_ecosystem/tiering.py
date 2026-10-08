@@ -20,6 +20,9 @@ TIERS = (
     Tier("Watchlist", 0, "Self-serve program, review quarterly"),
 )
 
+# A score this close to a threshold could tip either way on small data changes.
+BORDERLINE_MARGIN = 3.0
+
 
 def assign_tier(score: float) -> Tier:
     """Return the tier for a 0-100 fit score."""
@@ -29,3 +32,8 @@ def assign_tier(score: float) -> Tier:
         if score >= tier.min_score:
             return tier
     raise AssertionError("TIERS must end with a zero-floor tier")
+
+
+def is_borderline(score: float, margin: float = BORDERLINE_MARGIN) -> bool:
+    """True when the score sits within margin points of a tier threshold."""
+    return any(tier.min_score > 0 and abs(score - tier.min_score) <= margin for tier in TIERS)
