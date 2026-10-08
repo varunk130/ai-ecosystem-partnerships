@@ -9,10 +9,10 @@ Each dimension is normalized to 0-1, multiplied by its weight, and summed to a 0
 | Dimension | Weight | Normalization | Why it matters |
 |-----------|--------|---------------|----------------|
 | ICP fit | 30% | `icp_overlap` as given | Without shared buyers, nothing else converts |
-| Pipeline | 25% | `(sourced + 0.5 x influenced) / 2,000,000`, capped at 1 | The outcome the relationship exists for |
+| Pipeline | 25% | `(sourced + 0.5 × influenced) / 2,000,000`, capped at 1 | The outcome the relationship exists for |
 | Integration | 20% | `integration_depth / 3` | A product reason to sell together |
 | Traction | 15% | `joint_customers / 25`, capped at 1 | Proof it already works |
-| Commitment | 10% | `0.6 x exec_sponsor + 0.4 x certified_people / 20` (capped) | Whether they will show up |
+| Commitment | 10% | `0.6 × exec_sponsor + 0.4 × certified_people / 20` (capped) | Whether they will show up |
 
 ## Design choices
 
@@ -43,7 +43,7 @@ A partner with `icp_overlap` 0.5, integration depth 1, 5 joint customers, 100,00
 | Pipeline | (100,000 + 100,000) / 2,000,000 = 0.100 | 0.0250 |
 | Integration | 1 / 3 = 0.333 | 0.0667 |
 | Traction | 5 / 25 = 0.200 | 0.0300 |
-| Commitment | 0.4 x 4 / 20 = 0.080 | 0.0080 |
+| Commitment | 0.4 × 4 / 20 = 0.080 | 0.0080 |
 | **Total** | | **0.2797, score 28.0, Watchlist** |
 
 This case is pinned in `tests/test_scoring.py`.
