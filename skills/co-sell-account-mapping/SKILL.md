@@ -32,7 +32,7 @@ Turn two account lists into a short, owned list of actions with a partner.
 python -m partner_ecosystem overlap data/our_accounts.csv data/partner_accounts.csv
 ```
 
-Domains are normalised first, so `https://www.Acme.com/` matches `acme.com`. Subdomains other than `www` are kept distinct.
+Domains are normalized first, so `https://www.Acme.com/` matches `acme.com`. Subdomains other than `www` are kept distinct.
 
 ### Step 2: Read the play for each account
 
@@ -45,7 +45,7 @@ Domains are normalised first, so `https://www.Acme.com/` matches `acme.com`. Sub
 | open_opp | prospect | joint pursuit | Stronger together in an active evaluation |
 | prospect | prospect | co-marketing | Neither side is in; build demand together |
 
-### Step 3: Prioritise
+### Step 3: Prioritize
 Work co-sell first, ranked by opportunity amount and stage. Cap the list at what both teams can actually work: five to ten accounts per partner per quarter.
 
 ### Step 4: Balance the exchange
