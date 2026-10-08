@@ -1,0 +1,7 @@
+{
+  "icp_fit": 0.20,
+  "pipeline": 0.40,
+  "integration": 0.15,
+  "traction": 0.15,
+  "commitment": 0.10
+}
