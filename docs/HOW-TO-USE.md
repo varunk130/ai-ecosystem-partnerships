@@ -1,5 +1,11 @@
 # How to Use
 
+- [Install](#install)
+- [Commands](#commands)
+- [Input files](#input-files)
+- [Using the skills](#using-the-skills)
+- [Running the tests](#running-the-tests)
+
 ## Install
 
 The toolkit has no third-party dependencies. Python 3.10 or newer is enough.
