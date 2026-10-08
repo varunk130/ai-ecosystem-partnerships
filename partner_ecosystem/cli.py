@@ -10,12 +10,18 @@ from .attribution import attribute, load_opportunities, win_rate_lift
 from .models import load_partners
 from .overlap import load_our_accounts, load_partner_accounts, map_overlap
 from .scoring import score_partner
-from .tiering import assign_tier
+from .tiering import assign_tier, is_borderline
+
+
+def _cell(value: object) -> str:
+    if isinstance(value, bool):
+        return "yes" if value else ""
+    return str(value)
 
 
 def format_table(headers: Sequence[str], rows: Sequence[Sequence[object]]) -> str:
     """Render rows as a plain-text table with left-aligned, padded columns."""
-    cells = [[str(value) for value in row] for row in rows]
+    cells = [[_cell(value) for value in row] for row in rows]
     widths = [max(len(headers[i]), *(len(row[i]) for row in cells)) for i in range(len(headers))]
     lines = ["  ".join(header.ljust(width) for header, width in zip(headers, widths)).rstrip()]
     lines.append("  ".join("-" * width for width in widths))
@@ -42,12 +48,13 @@ def cmd_score(args: argparse.Namespace) -> int:
                 "type": partner.partner_type,
                 "score": score.total,
                 "tier": tier.name,
+                "borderline": is_borderline(score.total),
                 "weakest": score.weakest,
                 "motion": tier.motion,
             }
         )
     records.sort(key=lambda record: record["score"], reverse=True)
-    _emit(args, records, ["partner", "type", "score", "tier", "weakest", "motion"])
+    _emit(args, records, ["partner", "type", "score", "tier", "borderline", "weakest", "motion"])
     return 0
 
 
