@@ -9,7 +9,7 @@ from typing import Sequence
 
 from .attribution import attribute, load_opportunities, win_rate_lift
 from .models import load_partners
-from .overlap import load_our_accounts, load_partner_accounts, map_overlap
+from .overlap import give_ask_balance, load_our_accounts, load_partner_accounts, map_overlap
 from .scoring import load_weights, score_partner
 from .tiering import assign_tier, is_borderline
 
@@ -87,6 +87,12 @@ def cmd_overlap(args: argparse.Namespace) -> int:
     ]
     records = _filter_partner(args, records)
     _emit(args, records, ["partner", "account", "ours", "theirs", "play"])
+    if not args.json:
+        shown = {record["partner"] for record in records}
+        print("\nGive/ask balance")
+        for partner, counts in sorted(give_ask_balance(overlaps).items()):
+            if partner in shown:
+                print(f"  {partner}: {counts['asks']} asks, {counts['gives']} gives")
     return 0
 
 
