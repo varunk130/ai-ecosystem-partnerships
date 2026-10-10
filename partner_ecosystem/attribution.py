@@ -6,6 +6,8 @@ import csv
 from dataclasses import dataclass
 from pathlib import Path
 
+from .overlap import normalize_domain
+
 STAGES = ("open", "won", "lost")
 ROLES = ("sourced", "influenced", "none")
 
@@ -18,6 +20,7 @@ class Opportunity:
     stage: str
     partner: str
     role: str
+    domain: str = ""  # optional; lets opportunities join to account lists
 
     def __post_init__(self) -> None:
         if self.stage not in STAGES:
@@ -59,6 +62,7 @@ def load_opportunities(path: str | Path) -> list[Opportunity]:
                 stage=row["stage"].strip().lower(),
                 partner=row["partner"].strip(),
                 role=row["role"].strip().lower(),
+                domain=normalize_domain(row.get("domain") or ""),
             )
             for row in csv.DictReader(handle)
         ]
