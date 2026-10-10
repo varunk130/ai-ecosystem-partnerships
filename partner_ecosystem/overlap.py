@@ -25,6 +25,16 @@ PLAYS = {
 ASK_PLAYS = ("co-sell", "intro request")
 GIVE_PLAYS = ("referral to partner",)
 
+# Most urgent first: plays on live deals, then warm paths, then longer-term work.
+PLAY_PRIORITY = (
+    "co-sell",
+    "joint pursuit",
+    "intro request",
+    "joint expansion",
+    "referral to partner",
+    "co-marketing",
+)
+
 
 @dataclass(frozen=True)
 class Overlap:
@@ -109,3 +119,16 @@ def give_ask_balance(overlaps: list[Overlap]) -> dict[str, dict[str, int]]:
         }
         for partner, plays in summarize(overlaps).items()
     }
+
+
+def rank_overlaps(overlaps: list[Overlap], open_amounts: dict[str, float]) -> list[Overlap]:
+    """Order each partner's overlaps by play priority, then largest open amount."""
+    return sorted(
+        overlaps,
+        key=lambda overlap: (
+            overlap.partner,
+            PLAY_PRIORITY.index(overlap.play),
+            -open_amounts.get(overlap.domain, 0.0),
+            overlap.account,
+        ),
+    )
