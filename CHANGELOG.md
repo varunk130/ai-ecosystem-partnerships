@@ -5,6 +5,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-10
+
 ### Added
 - `--weights` option on `score` for custom scoring weights from a JSON file
 - `borderline` column on `score` for partners within three points of a tier threshold
@@ -15,6 +17,7 @@ All notable changes to this project are documented here. The format follows
 - Guidance on estimating `icp_overlap`
 - Playbooks on product partnerships, leading a partner ecosystem, and co-sell
 - Three skills: `product-partnership-evaluator`, `joint-business-plan`, `integration-launch-plan`
+- Sample data guide, issue templates, and CI on Python 3.13
 
 ### Fixed
 - Bad input now prints a one-line error and exits 2 instead of a traceback
