@@ -1,7 +1,13 @@
 import unittest
 from pathlib import Path
 
-from partner_ecosystem.attribution import Opportunity, attribute, load_opportunities, win_rate_lift
+from partner_ecosystem.attribution import (
+    Opportunity,
+    attribute,
+    load_opportunities,
+    open_amount_by_domain,
+    win_rate_lift,
+)
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -27,6 +33,22 @@ class LoadOpportunitiesTests(unittest.TestCase):
 
     def test_domain_defaults_to_empty(self):
         self.assertEqual(opp("O-1", 10, "open").domain, "")
+
+
+class OpenAmountByDomainTests(unittest.TestCase):
+    def test_sums_open_deals_and_ignores_closed_or_unmapped(self):
+        opportunities = [
+            Opportunity("O-1", "A", 100, "open", "", "none", "a.example"),
+            Opportunity("O-2", "A", 50, "open", "P", "sourced", "a.example"),
+            Opportunity("O-3", "A", 900, "won", "", "none", "a.example"),
+            Opportunity("O-4", "B", 70, "open", "", "none"),
+        ]
+        self.assertEqual(open_amount_by_domain(opportunities), {"a.example": 150})
+
+    def test_sample_data(self):
+        amounts = open_amount_by_domain(load_opportunities(DATA / "opportunities.csv"))
+        self.assertEqual(amounts["dovetail-bank.example"], 410000)
+        self.assertEqual(len(amounts), 4)
 
 
 class AttributeTests(unittest.TestCase):
