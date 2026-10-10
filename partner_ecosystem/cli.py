@@ -79,6 +79,10 @@ def cmd_score(args: argparse.Namespace) -> int:
     return 0
 
 
+def _count(number: int, noun: str) -> str:
+    return f"{number} {noun}" if number == 1 else f"{number} {noun}s"
+
+
 def cmd_overlap(args: argparse.Namespace) -> int:
     """List shared accounts with the play each one suggests."""
     overlaps = map_overlap(load_our_accounts(args.ours), load_partner_accounts(args.theirs))
@@ -110,7 +114,7 @@ def cmd_overlap(args: argparse.Namespace) -> int:
         print("\nGive/ask balance")
         for partner, counts in sorted(give_ask_balance(overlaps).items()):
             if partner in shown:
-                print(f"  {partner}: {counts['asks']} asks, {counts['gives']} gives")
+                print(f"  {partner}: {_count(counts['asks'], 'ask')}, {_count(counts['gives'], 'give')}")
     return 0
 
 
