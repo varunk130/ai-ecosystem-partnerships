@@ -74,3 +74,9 @@ At 90 days, make one of three calls: deepen, hold, or retire. Retiring an unused
 - Building to depth 3 because the partner is a famous brand
 - Measuring the integration by launch date instead of usage
 - Leaving support ownership undefined until the first outage
+
+## Related
+
+- Skill: [product-partnership-evaluator](../skills/product-partnership-evaluator/SKILL.md)
+- Skill: [integration-launch-plan](../skills/integration-launch-plan/SKILL.md)
+- [Back to all playbooks](README.md)
