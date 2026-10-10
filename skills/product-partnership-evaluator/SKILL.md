@@ -17,11 +17,13 @@ Decide whether a product partnership is worth doing, and how deep to go, before 
 ## What You'll Need
 
 **Critical inputs (ask if not provided):**
+
 - The customer problem the partnership would solve
 - The proposed partner and what their product does
 - How many customers you share today, or an estimate
 
 **Nice-to-have:**
+
 - Customer requests or lost-deal notes that mention the partner
 - The partner's row in `data/partners.csv`
 - Roadmap capacity for the next two quarters

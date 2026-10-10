@@ -17,10 +17,12 @@ Rank a partner portfolio on evidence so investment follows fit, not the loudest 
 ## What You'll Need
 
 **Critical inputs (ask if not provided):**
+
 - A partner list with the columns in `data/partners.csv`
 - The period the pipeline numbers cover (default: trailing 12 months)
 
 **Nice-to-have:**
+
 - Your ICP definition, to sanity-check `icp_overlap`
 - Any weights the team has already agreed on, as a JSON file for `--weights`
 

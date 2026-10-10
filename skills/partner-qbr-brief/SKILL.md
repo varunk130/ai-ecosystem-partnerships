@@ -16,10 +16,12 @@ Walk into a partner review with one page: where the relationship stands, what it
 ## What You'll Need
 
 **Critical inputs (ask if not provided):**
+
 - The partner's name
 - Partner, account, and opportunity CSVs covering the review period
 
 **Nice-to-have:**
+
 - Last quarter's commitments from both sides
 - Open escalations or integration blockers
 
