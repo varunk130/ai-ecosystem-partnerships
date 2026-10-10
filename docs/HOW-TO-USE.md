@@ -39,6 +39,7 @@ partner-eco score data/partners.csv
 | `--json` | all | Shorthand for `--format json` |
 | `--partner NAME` | all | Show one partner only, matched case-insensitively |
 | `--weights FILE` | `score` | Score with custom weights from a JSON file |
+| `--opportunities FILE` | `overlap` | Rank each partner's plays by priority and open amount, and add an `open_amount` column |
 
 A weights file names all five dimensions and sums to 1. See `data/weights.pipeline-heavy.json` for an example.
 
@@ -72,11 +73,12 @@ Domains may be full URLs; scheme, `www.`, port, path, and case are ignored when 
 
 ### opportunities.csv
 
-`opp_id,account,amount,stage,partner,role`
+`opp_id,account,amount,stage,partner,role,domain`
 
 - `stage` is `open`, `won`, or `lost`
 - `role` is `sourced`, `influenced`, or `none`
 - Leave `partner` empty when `role` is `none`; any other combination is rejected
+- `domain` is optional. When present, it joins opportunities to the account lists for `overlap --opportunities`
 
 ## Using the skills
 
