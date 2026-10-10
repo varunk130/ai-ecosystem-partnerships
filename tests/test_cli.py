@@ -54,7 +54,7 @@ class OutputFormatTests(unittest.TestCase):
 
     def test_overlap_table_ends_with_give_ask_balance(self):
         _, out, _ = run("overlap", str(DATA / "our_accounts.csv"), str(DATA / "partner_accounts.csv"))
-        self.assertIn("Brightline Consulting: 1 asks, 1 gives", out)
+        self.assertIn("Brightline Consulting: 1 ask, 1 give", out)
 
     def test_overlap_csv_has_no_summary_lines(self):
         _, out, _ = run("overlap", str(DATA / "our_accounts.csv"), str(DATA / "partner_accounts.csv"), "--format", "csv")
