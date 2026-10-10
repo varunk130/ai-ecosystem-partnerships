@@ -55,9 +55,9 @@ python -m partner_ecosystem attribution data/opportunities.csv
 | Layer | Metric | Why |
 |-------|--------|-----|
 | Outcome | Sourced won revenue, influenced won revenue | What the ecosystem produced |
-| Efficiency | Win rate with a partner attached against without | Whether partners improve deals |
+| Efficiency | Win rate with a partner attached versus without | Whether partners improve deals |
 | Health | Active partners, certified people, integration adoption | Whether next year's outcome is being built |
-| Balance | Asks against gives per partner | Whether the relationship is sustainable |
+| Balance | Asks versus gives per partner | Whether the relationship is sustainable |
 
 Win-rate lift is a correlation. Partners tend to join deals that are already healthy, so present it with that caveat.
 
