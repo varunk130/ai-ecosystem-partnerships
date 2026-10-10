@@ -35,7 +35,7 @@ Agree these before the first shared deal, on one page.
 | Topic | Rule to settle |
 |-------|----------------|
 | Deal registration | Who registers, how long protection lasts, what renews it |
-| Sourced against influenced | A definition both sides can apply without arguing |
+| Sourced versus influenced | A definition both sides can apply without arguing |
 | Account ownership | Who leads the customer conversation, and when that changes |
 | Information sharing | What can be shared about the account, and with whom |
 | Conflict | What happens when two partners claim the same deal |
