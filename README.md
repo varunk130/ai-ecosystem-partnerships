@@ -7,7 +7,7 @@
 A small, tested toolkit for running a partner ecosystem on evidence instead of
 anecdote: score partner fit, tier the portfolio, map account overlap, and
 attribute pipeline to partners. It ships as a dependency-free Python CLI plus
-three skills for Claude Code and GitHub Copilot.
+six skills for Claude Code and GitHub Copilot, with playbooks on product partnerships, ecosystem leadership, and co-sell.
 
 **Created and maintained by [Varun Kulkarni](https://github.com/varunk130)**
 
@@ -18,6 +18,7 @@ three skills for Claude Code and GitHub Copilot.
 - [How it fits together](#how-it-fits-together)
 - [Quickstart](#quickstart)
 - [What it answers](#what-it-answers)
+- [Playbooks](#playbooks)
 - [Skills](#skills)
 - [Documentation](#documentation)
 - [Related work](#related-work)
@@ -66,6 +67,16 @@ Kestrel AI             isv       59.0   Growth                 traction     Targ
 | What did partners source and influence, and do attached deals win more? | `python -m partner_ecosystem attribution data/opportunities.csv` |
 
 Every command takes `--format table|json|csv` and `--partner NAME`. `score` also takes `--weights FILE` for custom weights, and `overlap` takes `--opportunities FILE` to rank plays by open amount.
+
+## Playbooks
+
+How to run partnerships, written as decisions rather than theory.
+
+| Playbook | Covers |
+|----------|--------|
+| [Product partnerships](playbooks/product-partnerships.md) | Build, buy, or partner; integration depth; scope; commercial models |
+| [Leading a partner ecosystem](playbooks/leading-a-partner-ecosystem.md) | Purpose, tiers, cadence, metrics, ownership, and the first 90 days |
+| [Co-sell](playbooks/co-sell.md) | Preconditions, plays by account situation, rules of engagement, running a joint deal |
 
 ## Skills
 
