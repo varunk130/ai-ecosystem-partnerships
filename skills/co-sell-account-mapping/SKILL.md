@@ -86,3 +86,7 @@ The command prints a give/ask balance per partner under the table: asks are co-s
 - Do not share account data outside the agreed scope or with other partners.
 - An unmatched account is not evidence of no relationship; domains differ across subsidiaries.
 - Do not contact a partner's customer without the partner's account owner agreeing first.
+
+## Related
+
+- [Co-sell playbook](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/co-sell.md): preconditions, rules of engagement, and running a joint deal
