@@ -98,3 +98,12 @@ def win_rate_lift(opportunities: list[Opportunity]) -> dict[str, float | None]:
     unattached = win_rate(*counts[False])
     lift = None if attached is None or unattached is None else attached - unattached
     return {"attached": attached, "unattached": unattached, "lift": lift}
+
+
+def open_amount_by_domain(opportunities: list[Opportunity]) -> dict[str, float]:
+    """Total open pipeline per account domain, skipping opportunities without one."""
+    totals: dict[str, float] = {}
+    for opp in opportunities:
+        if opp.stage == "open" and opp.domain:
+            totals[opp.domain] = totals.get(opp.domain, 0.0) + opp.amount
+    return totals
