@@ -8,9 +8,9 @@ import json
 import sys
 from typing import Sequence
 
-from .attribution import attribute, load_opportunities, win_rate_lift
+from .attribution import attribute, load_opportunities, open_amount_by_domain, win_rate_lift
 from .models import load_partners
-from .overlap import give_ask_balance, load_our_accounts, load_partner_accounts, map_overlap
+from .overlap import give_ask_balance, load_our_accounts, load_partner_accounts, map_overlap, rank_overlaps
 from .scoring import load_weights, score_partner
 from .tiering import assign_tier, is_borderline
 
@@ -82,6 +82,12 @@ def cmd_score(args: argparse.Namespace) -> int:
 def cmd_overlap(args: argparse.Namespace) -> int:
     """List shared accounts with the play each one suggests."""
     overlaps = map_overlap(load_our_accounts(args.ours), load_partner_accounts(args.theirs))
+    if args.opportunities:
+        amounts = open_amount_by_domain(load_opportunities(args.opportunities))
+        ordered = rank_overlaps(overlaps, amounts)
+    else:
+        amounts = None
+        ordered = sorted(overlaps, key=lambda overlap: (overlap.partner, overlap.play, overlap.account))
     records = [
         {
             "partner": overlap.partner,
@@ -90,10 +96,15 @@ def cmd_overlap(args: argparse.Namespace) -> int:
             "theirs": overlap.partner_status,
             "play": overlap.play,
         }
-        for overlap in sorted(overlaps, key=lambda overlap: (overlap.partner, overlap.play, overlap.account))
+        for overlap in ordered
     ]
+    headers = ["partner", "account", "ours", "theirs", "play"]
+    if amounts is not None:
+        for record, overlap in zip(records, ordered):
+            record["open_amount"] = round(amounts.get(overlap.domain, 0.0))
+        headers.append("open_amount")
     records = _filter_partner(args, records)
-    _emit(args, records, ["partner", "account", "ours", "theirs", "play"])
+    _emit(args, records, headers)
     if args.format == "table":
         shown = {record["partner"] for record in records}
         print("\nGive/ask balance")
@@ -163,6 +174,7 @@ def build_parser() -> argparse.ArgumentParser:
     overlap = commands.add_parser("overlap", help="map shared accounts and suggest a play for each")
     overlap.add_argument("ours", help="path to our accounts CSV")
     overlap.add_argument("theirs", help="path to partner accounts CSV")
+    overlap.add_argument("--opportunities", help="opportunities CSV; ranks plays by open amount")
     overlap.set_defaults(func=cmd_overlap)
 
     attribution = commands.add_parser("attribution", help="sourced vs influenced revenue per partner")
