@@ -13,6 +13,8 @@ All notable changes to this project are documented here. The format follows
 - `--opportunities` option on `overlap` to rank plays by priority and open amount
 - Closed-deal counts next to win rate in `attribution`
 - Guidance on estimating `icp_overlap`
+- Playbooks on product partnerships, leading a partner ecosystem, and co-sell
+- Three skills: `product-partnership-evaluator`, `joint-business-plan`, `integration-launch-plan`
 
 ### Fixed
 - Bad input now prints a one-line error and exits 2 instead of a traceback
