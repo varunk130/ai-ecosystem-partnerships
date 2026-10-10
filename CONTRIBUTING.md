@@ -7,7 +7,7 @@ This repository is maintained by [@varunk130](https://github.com/varunk130). Onl
 1. `main` is protected. Nothing is pushed to it directly.
 2. Every change goes through a pull request with one approving review from the code owner.
 3. History is linear: pull requests are rebased onto `main` so each commit lands on its own. Squash and merge commits are turned off.
-4. CI must pass on Python 3.10 and 3.12.
+4. CI must pass on Python 3.10, 3.12, and 3.13.
 
 ## Suggesting a change
 
