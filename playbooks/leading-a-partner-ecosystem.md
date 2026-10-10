@@ -81,3 +81,10 @@ A portfolio that only grows gets worse. Each portfolio review should exit or dow
 1. **Days 1 to 30:** score the existing portfolio, meet the top ten partners, find the three deals in flight
 2. **Days 31 to 60:** publish tier criteria, run account mapping with the top three, agree the metrics with sales and finance
 3. **Days 61 to 90:** sign one joint business plan, exit or downgrade the bottom of the list, run the first QBR in the new format
+
+## Related
+
+- Skill: [partner-fit-scorecard](../skills/partner-fit-scorecard/SKILL.md)
+- Skill: [joint-business-plan](../skills/joint-business-plan/SKILL.md)
+- Skill: [partner-qbr-brief](../skills/partner-qbr-brief/SKILL.md)
+- [Back to all playbooks](README.md)
