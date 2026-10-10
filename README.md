@@ -85,6 +85,9 @@ How to run partnerships, written as decisions rather than theory.
 | [partner-fit-scorecard](skills/partner-fit-scorecard/SKILL.md) | Portfolio reviews and tiering decisions |
 | [co-sell-account-mapping](skills/co-sell-account-mapping/SKILL.md) | Turning account overlap into an owned action list |
 | [partner-qbr-brief](skills/partner-qbr-brief/SKILL.md) | A one-page brief for a partner review |
+| [product-partnership-evaluator](skills/product-partnership-evaluator/SKILL.md) | Build, buy, or partner decisions and integration scoping |
+| [joint-business-plan](skills/joint-business-plan/SKILL.md) | Shared goals, target accounts, and investments with a strategic partner |
+| [integration-launch-plan](skills/integration-launch-plan/SKILL.md) | Launching a partner integration and reviewing adoption at 90 days |
 
 Install one with `cp -r skills/partner-fit-scorecard ~/.claude/skills/`.
 
