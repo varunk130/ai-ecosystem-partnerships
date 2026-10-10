@@ -88,3 +88,8 @@ Tie the ask to the weakest dimension. Tie the give to something the partner has 
 - Keep it to one page. Detail goes in an appendix.
 - Do not quote the ecosystem-wide win-rate lift as this partner's result.
 - Partner-attached deals win more often partly because partners join stronger deals. Present lift as a correlation.
+
+## Related
+
+- [Leading a partner ecosystem](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/leading-a-partner-ecosystem.md): where the QBR sits in the operating cadence
+- [joint-business-plan](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/skills/joint-business-plan/SKILL.md): the plan a QBR reviews progress against
