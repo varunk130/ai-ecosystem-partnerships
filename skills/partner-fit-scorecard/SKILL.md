@@ -81,3 +81,8 @@ Before sharing, check for:
 - Do not change weights to make a favored partner rank higher. Change them only with a stated reason and re-score everyone.
 - A score is a starting point for a decision, not the decision.
 - Never present synthetic sample data as real partner performance.
+
+## Related
+
+- [Leading a partner ecosystem](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/leading-a-partner-ecosystem.md): how tiers become two-way commitments
+- [Scoring methodology](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/docs/scoring-methodology.md): weights, caps, and thresholds
