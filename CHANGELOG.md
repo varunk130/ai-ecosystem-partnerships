@@ -10,6 +10,7 @@ All notable changes to this project are documented here. The format follows
 - `borderline` column on `score` for partners within three points of a tier threshold
 - `--partner` filter and `--format table|json|csv` on every command
 - Give/ask balance per partner under the `overlap` table
+- `--opportunities` option on `overlap` to rank plays by priority and open amount
 - Closed-deal counts next to win rate in `attribution`
 - Guidance on estimating `icp_overlap`
 
