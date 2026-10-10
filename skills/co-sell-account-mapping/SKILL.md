@@ -49,7 +49,13 @@ Domains are normalized first, so `https://www.Acme.com/` matches `acme.com`. Sub
 
 ### Step 3: Prioritize
 
-Work co-sell first, ranked by opportunity amount and stage. Cap the list at what both teams can actually work: five to ten accounts per partner per quarter.
+Pass your opportunity export to rank each partner's list: live deals first, largest open amount at the top.
+
+```bash
+python -m partner_ecosystem overlap data/our_accounts.csv data/partner_accounts.csv --opportunities data/opportunities.csv
+```
+
+Cap the list at what both teams can actually work: five to ten accounts per partner per quarter.
 
 ### Step 4: Balance the exchange
 
