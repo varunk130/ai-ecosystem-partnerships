@@ -31,6 +31,36 @@ partner-eco score data/partners.csv
 | `overlap <ours.csv> <theirs.csv>` | Two account lists | Which shared accounts to work, and how |
 | `attribution <opportunities.csv>` | Opportunity export | What partners sourced and influenced, and whether attached deals win more |
 
+### Sample output
+
+Shared accounts with one partner, ranked by play and open amount:
+
+```text
+$ python -m partner_ecosystem overlap data/our_accounts.csv data/partner_accounts.csv --opportunities data/opportunities.csv --partner "Halcyon Cloud"
+partner        account               ours      theirs    play             open_amount
+-------------  --------------------  --------  --------  ---------------  -----------
+Halcyon Cloud  Dovetail Bank         open_opp  customer  co-sell          410000
+Halcyon Cloud  Harborline Logistics  open_opp  prospect  joint pursuit    275000
+Halcyon Cloud  Granite Energy        prospect  customer  intro request    0
+Halcyon Cloud  Everstone Retail      customer  customer  joint expansion  0
+
+Give/ask balance
+  Halcyon Cloud: 2 asks, 0 gives
+```
+
+Revenue by partner, with the sample size behind each win rate:
+
+```text
+$ python -m partner_ecosystem attribution data/opportunities.csv
+partner                sourced_won  influenced_won  open_pipeline  win_rate
+---------------------  -----------  --------------  -------------  ----------
+Halcyon Cloud          150,000      320,000         410,000        67% (2/3)
+Northwind Data         380,000      0               240,000        67% (2/3)
+Brightline Consulting  0            130,000         275,000        100% (1/1)
+
+Win rate with a partner attached: 71% | without: 40%
+```
+
 ### Options
 
 | Option | Commands | Effect |
