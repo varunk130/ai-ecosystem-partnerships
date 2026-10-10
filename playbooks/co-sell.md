@@ -74,3 +74,9 @@ Review weekly on shared deals and quarterly on results. Ask three questions: wha
 - Counting every deal a partner touched as sourced
 - Running co-sell with no change to seller compensation
 - Treating the partner manager as the only relationship; sellers need to know sellers
+
+## Related
+
+- Skill: [co-sell-account-mapping](../skills/co-sell-account-mapping/SKILL.md)
+- Next: [Leading a partner ecosystem](leading-a-partner-ecosystem.md), for the cadence co-sell runs on
+- [Back to all playbooks](README.md)
