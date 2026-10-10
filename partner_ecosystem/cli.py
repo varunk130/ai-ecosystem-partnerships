@@ -1,4 +1,4 @@
-"""Command-line entry point: partner-eco <command>."""
+"""Score, map, and attribute a partner ecosystem from CSV exports."""
 
 from __future__ import annotations
 
