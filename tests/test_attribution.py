@@ -20,6 +20,15 @@ class OpportunityTests(unittest.TestCase):
             opp("O-1", 100, "won", partner="P", role="none")
 
 
+class LoadOpportunitiesTests(unittest.TestCase):
+    def test_sample_data_has_normalized_domains(self):
+        opportunities = load_opportunities(DATA / "opportunities.csv")
+        self.assertEqual(opportunities[0].domain, "acmefreight.example")
+
+    def test_domain_defaults_to_empty(self):
+        self.assertEqual(opp("O-1", 10, "open").domain, "")
+
+
 class AttributeTests(unittest.TestCase):
     def test_splits_sourced_and_influenced_won_revenue(self):
         result = attribute(
