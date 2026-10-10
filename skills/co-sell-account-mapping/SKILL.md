@@ -17,10 +17,12 @@ Turn two account lists into a short, owned list of actions with a partner.
 ## What You'll Need
 
 **Critical inputs (ask if not provided):**
+
 - Your accounts: `domain,name,status` where status is `customer`, `open_opp`, or `prospect`
 - Partner accounts: `partner,domain,status` where status is `customer` or `prospect`
 
 **Nice-to-have:**
+
 - Open opportunity amounts and stages, to rank the co-sell list
 - Account owners on both sides
 

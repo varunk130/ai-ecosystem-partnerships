@@ -17,11 +17,13 @@ Launch a partner integration so that customers find it, field teams can explain 
 ## What You'll Need
 
 **Critical inputs (ask if not provided):**
+
 - What the integration does, in the customer's words
 - Target launch date and who owns it on each side
 - Customers already using it, including beta users
 
 **Nice-to-have:**
+
 - The one-page scope from `product-partnership-evaluator`
 - Shared accounts from `partner-eco overlap`
 - Each side's launch calendar, to avoid collisions

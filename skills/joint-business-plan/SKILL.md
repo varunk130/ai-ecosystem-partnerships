@@ -17,11 +17,13 @@ Turn a strategic partnership into written commitments both sides sign and review
 ## What You'll Need
 
 **Critical inputs (ask if not provided):**
+
 - The partner's name and the planning period
 - Last period's results: sourced won, influenced won, joint customers
 - Each side's top priority for the period
 
 **Nice-to-have:**
+
 - Output of `partner-eco score`, `overlap`, and `attribution` for this partner
 - Last period's plan and what was delivered
 - Integration roadmap items on either side
