@@ -72,6 +72,21 @@ class OutputFormatTests(unittest.TestCase):
         self.assertEqual((row["won"], row["lost"]), ("2", "1"))
 
 
+class OverlapRankingTests(unittest.TestCase):
+    ARGS = ("overlap", str(DATA / "our_accounts.csv"), str(DATA / "partner_accounts.csv"))
+
+    def test_without_opportunities_there_is_no_amount_column(self):
+        _, out, _ = run(*self.ARGS, "--json")
+        self.assertNotIn("open_amount", json.loads(out)[0])
+
+    def test_ranks_live_deals_first_with_their_open_amount(self):
+        _, out, _ = run(*self.ARGS, "--json", "--partner", "Halcyon Cloud", "--opportunities", str(DATA / "opportunities.csv"))
+        records = json.loads(out)
+        self.assertEqual([record["play"] for record in records[:2]], ["co-sell", "joint pursuit"])
+        self.assertEqual([record["open_amount"] for record in records[:2]], [410000, 275000])
+        self.assertEqual(records[-1]["open_amount"], 0)
+
+
 class ErrorHandlingTests(unittest.TestCase):
     def test_unknown_partner(self):
         code, out, err = run("score", PARTNERS, "--partner", "Nobody Inc")
