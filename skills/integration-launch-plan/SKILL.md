@@ -104,3 +104,8 @@ Name one success metric, its target, its owner, and the review date before launc
 - Never use a customer name or quote without written approval from that customer.
 - Launch date is not the success metric. Usage is.
 - If adoption is low at 90 days, recommend hold or retire rather than another announcement.
+
+## Related
+
+- [Product partnerships playbook](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/product-partnerships.md): integration depth and the 90-day review
+- [Co-sell playbook](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/co-sell.md): working the launch accounts with the partner's field team
