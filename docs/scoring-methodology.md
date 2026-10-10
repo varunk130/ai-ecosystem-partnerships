@@ -2,6 +2,13 @@
 
 The fit score answers one question: given limited partner-team time, where does the next hour do the most good?
 
+- [Dimensions](#dimensions)
+- [Design choices](#design-choices)
+- [Tiers](#tiers)
+- [Worked example](#worked-example)
+- [Estimating ICP overlap](#estimating-icp-overlap)
+- [Limits](#limits)
+
 ## Dimensions
 
 Each dimension is normalized to 0-1, multiplied by its weight, and summed to a 0-100 score.
