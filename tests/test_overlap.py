@@ -2,11 +2,15 @@ import unittest
 from pathlib import Path
 
 from partner_ecosystem.overlap import (
+    PLAY_PRIORITY,
+    PLAYS,
+    Overlap,
     give_ask_balance,
     load_our_accounts,
     load_partner_accounts,
     map_overlap,
     normalize_domain,
+    rank_overlaps,
     summarize,
 )
 
@@ -63,6 +67,28 @@ class MapOverlapTests(unittest.TestCase):
         )
         self.assertEqual(balance["Brightline Consulting"], {"asks": 1, "gives": 1})
         self.assertEqual(balance["Halcyon Cloud"], {"asks": 2, "gives": 0})
+
+
+class RankOverlapsTests(unittest.TestCase):
+    def overlap(self, domain, play, partner="P"):
+        return Overlap(partner, domain, domain.split(".")[0].upper(), "open_opp", "customer", play)
+
+    def test_every_play_has_a_priority(self):
+        self.assertEqual(set(PLAY_PRIORITY), set(PLAYS.values()))
+
+    def test_larger_open_amount_comes_first_within_a_play(self):
+        overlaps = [self.overlap("small.example", "co-sell"), self.overlap("big.example", "co-sell")]
+        ranked = rank_overlaps(overlaps, {"small.example": 10, "big.example": 500})
+        self.assertEqual([overlap.domain for overlap in ranked], ["big.example", "small.example"])
+
+    def test_play_priority_beats_amount(self):
+        overlaps = [self.overlap("a.example", "co-marketing"), self.overlap("b.example", "co-sell")]
+        ranked = rank_overlaps(overlaps, {"a.example": 999})
+        self.assertEqual([overlap.play for overlap in ranked], ["co-sell", "co-marketing"])
+
+    def test_partners_stay_grouped(self):
+        overlaps = [self.overlap("a.example", "co-sell", "Zed"), self.overlap("b.example", "co-marketing", "Abe")]
+        self.assertEqual([overlap.partner for overlap in rank_overlaps(overlaps, {})], ["Abe", "Zed"])
 
 
 if __name__ == "__main__":
