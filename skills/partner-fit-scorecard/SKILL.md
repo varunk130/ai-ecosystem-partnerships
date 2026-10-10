@@ -22,7 +22,7 @@ Rank a partner portfolio on evidence so investment follows fit, not the loudest 
 
 **Nice-to-have:**
 - Your ICP definition, to sanity-check `icp_overlap`
-- Any weights the team has already agreed, as a JSON file for `--weights`
+- Any weights the team has already agreed on, as a JSON file for `--weights`
 
 ## Process
 
