@@ -84,6 +84,17 @@ Domains may be full URLs; scheme, `www.`, port, path, and case are ignored when 
 
 Each folder under `skills/` is a self-contained skill.
 
+| Skill | Ask for it with |
+|-------|-----------------|
+| `partner-fit-scorecard` | "Score my partner portfolio" |
+| `co-sell-account-mapping` | "Map our accounts against this partner's list" |
+| `partner-qbr-brief` | "Prepare a QBR brief for Northwind Data" |
+| `product-partnership-evaluator` | "Should we build this, buy it, or partner for it?" |
+| `joint-business-plan` | "Draft a joint business plan with Halcyon Cloud" |
+| `integration-launch-plan` | "Plan the launch of our integration with Kestrel AI" |
+
+The [playbooks](../playbooks/README.md) explain the reasoning behind each one.
+
 **Claude Code**
 
 ```bash
