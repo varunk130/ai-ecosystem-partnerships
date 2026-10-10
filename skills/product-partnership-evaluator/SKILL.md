@@ -101,3 +101,8 @@ List dependency, channel conflict with existing partners, competitive overlap, a
 - Do not recommend embedded depth without usage data from a shallower integration.
 - Say "do nothing" when that is the answer.
 - Flag any conflict with an existing partner; do not leave it for them to discover.
+
+## Related
+
+- [Product partnerships playbook](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/product-partnerships.md): the reasoning behind each step
+- [integration-launch-plan](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/skills/integration-launch-plan/SKILL.md): what to do once the answer is partner
