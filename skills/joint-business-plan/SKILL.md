@@ -99,3 +99,8 @@ Include roadmap dependencies, competing partnerships on either side, and organiz
 - Every target needs a baseline and an owner.
 - Do not write commitments for the partner that they have not agreed to; mark them as proposed.
 - Keep sourced and influenced targets separate.
+
+## Related
+
+- [Leading a partner ecosystem](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/leading-a-partner-ecosystem.md): what the Strategic tier commits each side to
+- [partner-qbr-brief](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/skills/partner-qbr-brief/SKILL.md): the quarterly review of this plan
