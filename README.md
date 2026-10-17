@@ -7,7 +7,8 @@
 A small, tested toolkit for running a partner ecosystem on evidence instead of
 anecdote: score partner fit, tier the portfolio, map account overlap, and
 attribute pipeline to partners. It ships as a dependency-free Python CLI plus
-six skills for Claude Code and GitHub Copilot, with playbooks on product partnerships, ecosystem leadership, and co-sell.
+six skills for Claude Code and GitHub Copilot, with playbooks for product
+partnerships, ecosystem leadership, and co-sell.
 
 **Created and maintained by [Varun Kulkarni](https://github.com/varunk130)**
 
