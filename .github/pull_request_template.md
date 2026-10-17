@@ -14,7 +14,7 @@
 ## Checklist
 
 - [ ] New data is synthetic and contains no real partner or customer information
-- [ ] Docs and `CHANGELOG.md` updated if behaviour changed
+- [ ] Docs and `CHANGELOG.md` updated if behavior changed
 - [ ] Scoring weight or tier threshold changes are explained in `docs/scoring-methodology.md`
 - [ ] New skills and playbooks are listed in `README.md`
 - [ ] Commits are small and each message says what changed
