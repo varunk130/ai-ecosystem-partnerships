@@ -101,7 +101,7 @@ Install one with `cp -r skills/partner-fit-scorecard ~/.claude/skills/`.
 
 ## Related work
 
-- [ai-partner-ecosystem-analysis](https://github.com/varunk130/ai-partner-ecosystem-analysis): research any ISV or partner from their public site
+- [ai-partner-ecosystem-analysis](https://github.com/varunk130/ai-partner-ecosystem-analysis): research any ISV or partner from its public site
 - [ai-gtm-skill-library](https://github.com/varunk130/ai-gtm-skill-library): GTM skills, including partner strategy
 - [ai-revops](https://github.com/varunk130/ai-revops): multi-agent runtime across GTM, Partnerships, and RevOps
 
