@@ -27,7 +27,7 @@ Each dimension is normalized to 0-1, multiplied by its weight, and summed to a 0
 
 **Influenced counts half.** Influenced pipeline is real, but the bar for claiming it is lower than for sourced. Discounting it keeps the score from rewarding attribution hygiene over origination.
 
-**Fit outweighs pipeline.** Pipeline is a lagging signal and new partners have none. Weighting fit highest lets a well-matched new partner reach Emerging or Growth before revenue arrives.
+**Fit outweighs pipeline.** Pipeline is a lagging signal, and new partners have none. Weighting fit highest lets a well-matched new partner reach Emerging or Growth before revenue arrives.
 
 **Weakest dimension.** Every score reports the lowest-scoring dimension, unweighted. It is the most useful single line for the partner conversation.
 
