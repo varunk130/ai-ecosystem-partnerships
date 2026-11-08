@@ -5,6 +5,9 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+- Link to ai-strategic-partnerships-skills in Related work, for the deal side of partnerships: thesis, deal structure, negotiation, term sheets, and agentic trust terms.
+
 ## [0.2.0] - 2026-10-10
 
 ### Added
