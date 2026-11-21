@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 ## [Unreleased]
 
 ### Added
+- `SECURITY.md` and `CODE_OF_CONDUCT.md`, linked from the README.
+- Dependabot configuration for GitHub Actions version updates.
 - Link to ai-strategic-partnerships-skills in Related work, for the deal side of partnerships: thesis, deal structure, negotiation, term sheets, and agentic trust terms.
 
 ## [0.2.0] - 2026-10-10
