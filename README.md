@@ -97,6 +97,8 @@ Install one with `cp -r skills/partner-fit-scorecard ~/.claude/skills/`.
 - [How to use](docs/HOW-TO-USE.md): commands, input formats, skill installation
 - [Scoring methodology](docs/scoring-methodology.md): weights, caps, tiers, and a worked example
 - [Contributing](CONTRIBUTING.md): how changes land on the protected `main` branch
+- [Code of conduct](CODE_OF_CONDUCT.md)
+- [Security policy](SECURITY.md): how to report a vulnerability privately
 - [Changelog](CHANGELOG.md)
 
 ## Related work
