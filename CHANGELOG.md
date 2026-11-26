@@ -5,9 +5,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-26
+
 ### Added
-- `SECURITY.md` and `CODE_OF_CONDUCT.md`, linked from the README.
-- Link to ai-strategic-partnerships-skills in Related work, for the deal side of partnerships: thesis, deal structure, negotiation, term sheets, and agentic trust terms.
+- `report` command: one self-contained HTML page with headline numbers, a ranked action list, the portfolio by tier, co-sell plays, and attribution charts, in light and dark mode
+- `ecosystem-review` skill to run the full cycle end to end
+- `partner-research` skill, merged from the former ai-partner-ecosystem-analysis repository and adapted to produce a draft `partners.csv` row
+- `SECURITY.md` and `CODE_OF_CONDUCT.md`
+- Link to ai-strategic-partnerships-skills for the deal side of partnerships
+
+### Changed
+- README rewritten as a one-minute executive overview
 
 ## [0.2.0] - 2026-10-10
 

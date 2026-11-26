@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "partner-ecosystem"
-version = "0.2.0"
-description = "Score, tier, map, and attribute a partner ecosystem."
+version = "0.3.0"
+description = "Research, score, map, and attribute a partner ecosystem, with a one-page executive report."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -18,7 +18,7 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Topic :: Office/Business",
 ]
-keywords = ["partnerships", "partner-ecosystem", "co-sell", "account-mapping", "attribution"]
+keywords = ["partnerships", "executive-report", "partner-ecosystem", "co-sell", "account-mapping", "attribution"]
 
 [project.urls]
 Homepage = "https://github.com/varunk130/ai-ecosystem-partnerships"

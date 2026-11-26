@@ -30,6 +30,18 @@ partner-eco score data/partners.csv
 | `score <partners.csv>` | Partner portfolio | Which partners deserve investment, and what holds each back |
 | `overlap <ours.csv> <theirs.csv>` | Two account lists | Which shared accounts to work, and how |
 | `attribution <opportunities.csv>` | Opportunity export | What partners sourced and influenced, and whether attached deals win more |
+| `report [data folder]` | All four CSVs in one folder | Everything above on one page, with a ranked action list |
+
+### The executive report
+
+`report` runs every analysis and writes one self-contained HTML page: headline numbers, what to do this quarter, the portfolio by tier, co-sell plays on shared accounts, and what partners delivered. It works offline and prints cleanly.
+
+```text
+$ python -m partner_ecosystem report data --out review.html
+Wrote review.html
+```
+
+The folder must hold `partners.csv`, `our_accounts.csv`, `partner_accounts.csv`, and `opportunities.csv`. `report` takes `--out`, `--weights`, and `--title`.
 
 ### Sample output
 
@@ -65,10 +77,10 @@ Win rate with a partner attached: 71% | without: 40%
 
 | Option | Commands | Effect |
 |--------|----------|--------|
-| `--format table\|json\|csv` | all | Output format; `table` is the default |
-| `--json` | all | Shorthand for `--format json` |
-| `--partner NAME` | all | Show one partner only, matched case-insensitively |
-| `--weights FILE` | `score` | Score with custom weights from a JSON file |
+| `--format table\|json\|csv` | all except `report` | Output format; `table` is the default |
+| `--json` | all except `report` | Shorthand for `--format json` |
+| `--partner NAME` | all except `report` | Show one partner only, matched case-insensitively |
+| `--weights FILE` | `score`, `report` | Score with custom weights from a JSON file |
 | `--opportunities FILE` | `overlap` | Rank each partner's plays by priority and open amount, and add an `open_amount` column |
 
 A weights file names all five dimensions and sums to 1. See `data/weights.pipeline-heavy.json` for an example.
@@ -116,6 +128,8 @@ Each folder under `skills/` is a self-contained skill.
 
 | Skill | Ask for it with |
 |-------|-----------------|
+| `ecosystem-review` | "Run an ecosystem review on our partner data" |
+| `partner-research` | "Research Arbor Robotics as a partner" |
 | `partner-fit-scorecard` | "Score my partner portfolio" |
 | `co-sell-account-mapping` | "Map our accounts against this partner's list" |
 | `partner-qbr-brief` | "Prepare a QBR brief for Northwind Data" |
