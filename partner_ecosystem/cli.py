@@ -6,11 +6,13 @@ import argparse
 import csv
 import json
 import sys
+from pathlib import Path
 from typing import Sequence
 
 from .attribution import attribute, load_opportunities, open_amount_by_domain, win_rate_lift
 from .models import load_partners
 from .overlap import give_ask_balance, load_our_accounts, load_partner_accounts, map_overlap, rank_overlaps
+from .report import analyze, write_report
 from .scoring import load_weights, score_partner
 from .tiering import assign_tier, is_borderline
 
@@ -166,6 +168,20 @@ def cmd_attribution(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_report(args: argparse.Namespace) -> int:
+    """Run every analysis and write the one-page executive report."""
+    data = Path(args.data)
+    eco = analyze(
+        load_partners(data / "partners.csv"),
+        map_overlap(load_our_accounts(data / "our_accounts.csv"), load_partner_accounts(data / "partner_accounts.csv")),
+        load_opportunities(data / "opportunities.csv"),
+        load_weights(args.weights) if args.weights else None,
+    )
+    out = write_report(eco, args.out, title=args.title)
+    print(f"Wrote {out}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="partner-eco", description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
@@ -185,7 +201,16 @@ def build_parser() -> argparse.ArgumentParser:
     attribution.add_argument("opportunities", help="path to opportunities CSV")
     attribution.set_defaults(func=cmd_attribution)
 
-    for command in commands.choices.values():
+    analysis_commands = list(commands.choices.values())
+
+    report = commands.add_parser("report", help="write a one-page executive report from a data folder")
+    report.add_argument("data", nargs="?", default="data", help="folder with the four input CSVs (default: data)")
+    report.add_argument("--out", default="report.html", help="where to write the HTML report (default: report.html)")
+    report.add_argument("--weights", help="path to a JSON file of dimension weights")
+    report.add_argument("--title", default="Partner ecosystem review", help="report title")
+    report.set_defaults(func=cmd_report)
+
+    for command in analysis_commands:
         command.add_argument("--format", choices=FORMATS, default="table", help="output format (default: table)")
         command.add_argument(
             "--json",

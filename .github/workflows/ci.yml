@@ -23,3 +23,5 @@ jobs:
         run: python -m unittest discover -v
       - name: Smoke-test the CLI
         run: python -m partner_ecosystem score data/partners.csv
+      - name: Smoke-test the report
+        run: python -m partner_ecosystem report --out report.html

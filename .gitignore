@@ -6,3 +6,6 @@ dist/
 .venv/
 .pytest_cache/
 .DS_Store
+
+# Generated reports
+report.html
