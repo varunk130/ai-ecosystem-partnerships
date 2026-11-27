@@ -366,6 +366,7 @@ def render_html(eco: Ecosystem, title: str = "Partner ecosystem review", as_of: 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>{escape(title)}</title>
 <style>{CSS}</style>
 </head>
