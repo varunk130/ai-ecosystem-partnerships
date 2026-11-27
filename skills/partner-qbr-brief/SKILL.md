@@ -93,3 +93,4 @@ Tie the ask to the weakest dimension. Tie the give to something the partner has 
 
 - [Leading a partner ecosystem](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/leading-a-partner-ecosystem.md): where the QBR sits in the operating cadence
 - [joint-business-plan](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/skills/joint-business-plan/SKILL.md): the plan a QBR reviews progress against
+- [ecosystem-review](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/skills/ecosystem-review/SKILL.md): the portfolio-wide report a QBR brief can draw from
