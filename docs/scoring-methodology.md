@@ -74,3 +74,4 @@ Use the same method for every partner in a review. A consistent bias still ranks
 - The caps and weights are opinionated defaults, not benchmarks. Tune them to your deal sizes and pass custom weights with `--weights` or to `score_partner`.
 - `icp_overlap` is an estimate. Record how it was derived.
 - Win-rate lift in the attribution view is a correlation. Partners tend to engage on deals that are already healthier.
+- The report's action list follows fixed rules (live deals first, then give/ask balance, then tiers). Treat it as a starting agenda, not a decision.
