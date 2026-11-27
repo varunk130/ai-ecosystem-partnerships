@@ -90,3 +90,4 @@ The command prints a give/ask balance per partner under the table: asks are co-s
 ## Related
 
 - [Co-sell playbook](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/co-sell.md): preconditions, rules of engagement, and running a joint deal
+- [ecosystem-review](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/skills/ecosystem-review/SKILL.md): ranks the plays on open deals across every partner
