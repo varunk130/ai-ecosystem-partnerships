@@ -85,6 +85,8 @@ Win rate with a partner attached: 71% | without: 40%
 
 A weights file names all five dimensions and sums to 1. See `data/weights.pipeline-heavy.json` for an example.
 
+Run `python -m partner_ecosystem --version` to see the installed version.
+
 ### Errors
 
 A missing file, a missing column, an invalid value, or an unknown partner name prints one line to stderr and exits with code 2.
