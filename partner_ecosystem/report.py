@@ -376,7 +376,7 @@ def render_html(eco: Ecosystem, title: str = "Partner ecosystem review", as_of: 
   <h1>{escape(headline)}</h1>
   <p class="sub">{len(eco.partners)} partners scored, {len(eco.plays)} shared accounts mapped, {eco.opportunity_count} opportunities attributed.</p>
 
-  <section class="kpis">{kpi_html}</section>
+  <section class="kpis" aria-label="Headline numbers">{kpi_html}</section>
 
   <section class="card">
     <h2>What to do this quarter</h2>
