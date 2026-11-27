@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from typing import Sequence
 
+from . import __version__
 from .attribution import attribute, load_opportunities, open_amount_by_domain, win_rate_lift
 from .models import load_partners
 from .overlap import give_ask_balance, load_our_accounts, load_partner_accounts, map_overlap, rank_overlaps
@@ -184,6 +185,7 @@ def cmd_report(args: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="partner-eco", description=__doc__)
+    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     commands = parser.add_subparsers(dest="command", required=True)
 
     score = commands.add_parser("score", help="score and tier every partner")
