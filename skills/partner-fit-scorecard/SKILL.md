@@ -86,3 +86,4 @@ Before sharing, check for:
 
 - [Leading a partner ecosystem](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/playbooks/leading-a-partner-ecosystem.md): how tiers become two-way commitments
 - [Scoring methodology](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/docs/scoring-methodology.md): weights, caps, and thresholds
+- [partner-research](https://github.com/varunk130/ai-ecosystem-partnerships/blob/main/skills/partner-research/SKILL.md): builds the CSV row for a new partner before it is scored
